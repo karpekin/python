@@ -67,20 +67,33 @@ Task 8
 (то есть разломить шоколадку на два прямоугольника).
 '''
 
+# n = int(input('Введите n: '))
+# m = int(input('Введите m: '))
+# k = int(input('Сколько долек хотите получить?: '))
+#
+# if n > m:
+#     big_side = n
+# elif m > n:
+#     big_side = m
+# else:
+#     big_side = m
+#
+# if k <= big_side and k >= 2:
+#     print('yes')
+# elif k % n == 0 or k % m == 0:
+#     print('yes')
+# else:
+#     print('no')
+
+# Второй варинт(правильный) 8 задачи
 n = int(input('Введите n: '))
 m = int(input('Введите m: '))
 k = int(input('Сколько долек хотите получить?: '))
 
-if n > m:
-    big_side = n
-elif m > n:
-    big_side = m
-else:
-    big_side = m
-
-if k <= big_side and k >= 2:
-    print('yes')
-elif k % n == 0 or k % m == 0:
-    print('yes')
+if n*m > k:
+    if k % n == 0 or k % m == 0:
+        print('yes')
+    else:
+        print('no')
 else:
     print('no')
