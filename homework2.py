@@ -48,15 +48,33 @@
 # print(f'X = {X}, Y = {Y}')
 
 # Вариант 2
-# X * Y = P
-# X + Y = S
-# X = S - Y
-# (S-Y)*Y = P
-# Y*S-2Y = P
-# Y = P/(S-2)
-# X = P/(P/(S-2))
-S = 5
-P = 6
-Y = int(P/(S-2))
-X = int(P/(P/(S-2)))
-print(f'X = {X}, Y = {Y}')
+## X * Y = P
+## X + Y = S
+## X = S - Y
+## (S-Y)*Y = P
+## Y*S-2Y = P
+## Y = P/(S-2)
+## X = P/(P/(S-2))
+# S = 5
+# P = 6
+# Y = int(P/(S-2))
+# X = int(P/(P/(S-2)))
+# print(f'X = {X}, Y = {Y}')
+
+'''
+Задача 14: Требуется вывести все целые степени двойки (т.е. числа
+вида 2k
+), не превосходящие числа N.
+10 -> 1 2 4 8
+'''
+from math import pow
+N = int(input())
+result = 0
+i = 0
+while True:
+    result = int(pow(2, i))
+    if result < N:
+        print(result, end=" ")
+    else:
+        break
+    i += 1
