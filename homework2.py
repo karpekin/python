@@ -7,15 +7,56 @@
 5 -> 1 0 1 1 0
 2
 '''
-from random import randint
-n = int(input())
-eagle = 0
-tails = 0
-for i in range(n):
-    coin = randint(0, 1)
-    print(coin, end=" ")
-    if coin == 1:
-        eagle += 1
-    else:
-        tails += 1
-print(f'\n{eagle if eagle < tails else tails}')
+# from random import randint
+# n = int(input())
+# eagle = 0
+# tails = 0
+# for i in range(n):
+#     coin = randint(0, 1)
+#     print(coin, end=" ")
+#     if coin == 1:
+#         eagle += 1
+#     else:
+#         tails += 1
+# print(f'\n{eagle if eagle < tails else tails}')
+
+'''
+Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя –
+школьница. Петя помогает Кате по математике. Он задумывает два
+натуральных числа X и Y (X,Y≤1000), а Катя должна их отгадать. Для
+этого Петя делает две подсказки. Он называет сумму этих чисел S и их
+произведение P. Помогите Кате отгадать задуманные Петей числа.
+4 4 -> 2 2
+5 6 -> 2 3
+'''
+# Вариант 1
+# S = 5  # X + Y
+# P = 6  # X * Y
+# SU = 0
+# PR = 0
+# flag = False
+# for X in range(1001):
+#     for Y in range(1001):
+#         SU = X + Y
+#         PR = X * Y
+#         if SU == S and PR == P:
+#             flag = True
+#             break
+#
+#     if flag:
+#         break
+# print(f'X = {X}, Y = {Y}')
+
+# Вариант 2
+# X * Y = P
+# X + Y = S
+# X = S - Y
+# (S-Y)*Y = P
+# Y*S-2Y = P
+# Y = P/(S-2)
+# X = P/(P/(S-2))
+S = 5
+P = 6
+Y = int(P/(S-2))
+X = int(P/(P/(S-2)))
+print(f'X = {X}, Y = {Y}')
