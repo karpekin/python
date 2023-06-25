@@ -32,7 +32,12 @@ N = abs(int(input('Введите N: ')))
 A = [randint(1, N) for i in range(N)]
 print(A)
 X = abs(int(input('Введите X: ')))
-mini = max(A)
+
+if max(A) >= X:
+    mini = max(A)
+else:
+    mini = X
+
 j = 0
 for i in A:
     if abs(X-i) < mini:
