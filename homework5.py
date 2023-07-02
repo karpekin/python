@@ -45,17 +45,33 @@ A = 2; B = 3 -> 8
 2 2
 4
 '''
+# A, B = int(input('Введите целое положительное A: ')), \
+#     int(input('Введите целое положительное B: '))
+
+'''1-й Вариант'''
+# def sum1(a, b):
+#     if a == 0:
+#         return b
+#     elif b == 0:
+#         return a
+#     else:
+#         return sum1(a - 1, b) + 1
+#
+#
+# print(sum1(A, B))
+
+'''2-Вариант'''
 A, B = int(input('Введите целое положительное A: ')), \
     int(input('Введите целое положительное B: '))
 
 
 def sum1(a, b):
-    if a == 0:
-        return b
-    elif b == 0:
-        return a
+    if a == b:
+        return a + b
+    elif a < b:
+        return sum1(a, b-1) + 1
     else:
-        return sum1(a - 1, b) + 1
+        return sum1(a-1, b) + 1
 
 
 print(sum1(A, B))
