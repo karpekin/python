@@ -4,15 +4,9 @@
 члена прогрессии: an = a1 + (n-1) * d.
 Каждое число вводится с новой строки.
 '''
-'''
-an = a1 + (n-1) * d
-a1 = 1
-a2 = 1 + 1 * 1 = 2
-a3 = 1 + 2 * 1 = 3
-d = ((a1 + (n-1) * d) - a1)/(n-1)
-'''
 start = int(input('Введите a1: '))
+step = int(input('Введите d: '))
 stop = int(input('Введите n: '))
-d = int(input('Введите d: '))
-li = [_ for _ in range(start, stop, int(((start + (stop-1)*d)-start)/(stop-1)))]
+
+li = [_ for _ in range(start, (start + (stop-1) * step) + 1, step)]
 print(li)
